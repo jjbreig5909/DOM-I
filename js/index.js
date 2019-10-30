@@ -43,8 +43,28 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const navLinks = document.querySelector('nav').children;
 Array.from(navLinks).forEach((navLink, i) => {
-  navLink.textContent=siteContent.nav[`nav-item-${i+1}`];
+  navLink.textContent = siteContent.nav[`nav-item-${i + 1}`];
+  navLink.style.color = 'green';
 });
+
+//Using the append child method
+const newLink1 = document.createElement('a');
+newLink1.innerHTML = "Learn";
+newLink1.style.color='green';
+newLink1.setAttribute("href", "#");
+
+//Using the prepend method
+const newLink2 = document.createElement("a");
+newLink2.innerHTML =  "Home";
+newLink2.setAttribute("href", "#");
+newLink2.style.color = 'green';
+
+const newNav=document.querySelector('nav');
+newNav.prepend(newLink2);
+newNav.appendChild(newLink1);
+
+
+
 
 const h1Text = document.querySelector('h1');
 h1Text.append(siteContent.cta["h1"]);
@@ -75,7 +95,6 @@ const middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
 const footerText = document.querySelector('footer').children;
-console.log(footerText);
 footerText[0].textContent = siteContent.footer.copyright;
 
 
