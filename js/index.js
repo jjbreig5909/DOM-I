@@ -42,16 +42,8 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const navLinks = document.querySelector('nav').children;
-console.log(navLinks);
-console.log(siteContent.nav["nav-item-1"]);
-// navLinks[0].append(siteContent.nav["nav-item-1"]);
-// navLinks[1].append(siteContent.nav["nav-item-2"]);
-// navLinks[2].append(siteContent.nav["nav-item-3"]);
-// navLinks[3].append(siteContent.nav["nav-item-4"]);
-// navLinks[4].append(siteContent.nav["nav-item-5"]);
-// navLinks[5].append(siteContent.nav["nav-item-6"]);
 Array.from(navLinks).forEach((navLink, i) => {
-  navLink.append(siteContent.nav[`nav-item-${i+1}`]);
+  navLink.textContent=siteContent.nav[`nav-item-${i+1}`];
 });
 
 const h1Text = document.querySelector('h1');
@@ -60,5 +52,30 @@ const ctaButton = document.querySelector('button');
 ctaButton.append(siteContent.cta['button']);
 const ctaImg = document.getElementById('cta-img');
 ctaImg.setAttribute('src', siteContent.cta["img-src"]);
+
+const siteTextContentHeaders = document.querySelectorAll('h4');
+siteTextContentHeaders[0].textContent = siteContent["main-content"]["features-h4"];
+siteTextContentHeaders[1].textContent = siteContent["main-content"]["about-h4"];
+siteTextContentHeaders[2].textContent = siteContent["main-content"]["services-h4"];
+siteTextContentHeaders[3].textContent = siteContent["main-content"]["product-h4"];
+siteTextContentHeaders[4].textContent = siteContent["main-content"]["vision-h4"];
+siteTextContentHeaders[5].textContent = siteContent.contact["contact-h4"];
+
+const siteTextContent = document.querySelectorAll('p');
+siteTextContent[0].textContent = siteContent["main-content"]["features-content"];
+siteTextContent[1].textContent = siteContent["main-content"]["about-content"];
+siteTextContent[2].textContent = siteContent["main-content"]["services-content"];
+siteTextContent[3].textContent = siteContent["main-content"]["product-content"];
+siteTextContent[4].textContent = siteContent["main-content"]["vision-content"];
+siteTextContent[5].textContent = siteContent.contact.address;
+siteTextContent[6].textContent = siteContent.contact.phone;
+siteTextContent[7].textContent = siteContent.contact.email;
+
+const middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+const footerText = document.querySelector('footer').children;
+console.log(footerText);
+footerText[0].textContent = siteContent.footer.copyright;
 
 
