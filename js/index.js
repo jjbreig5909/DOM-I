@@ -54,6 +54,11 @@ Array.from(navLinks).forEach((navLink, i) => {
   navLink.append(siteContent.nav[`nav-item-${i+1}`]);
 });
 
-
+const h1Text = document.querySelector('h1');
+h1Text.append(siteContent.cta["h1"]);
+const ctaButton = document.querySelector('button');
+ctaButton.append(siteContent.cta['button']);
+const ctaImg = document.getElementById('cta-img');
+ctaImg.setAttribute('src', siteContent.cta["img-src"]);
 
 
