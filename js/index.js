@@ -70,7 +70,7 @@ const h1Text = document.querySelector('h1');
 h1Text.append(siteContent.cta["h1"]);
 const ctaButton = document.querySelector('button');
 ctaButton.append(siteContent.cta['button']);
-ctaButton.addEventListener('click', (event)=>{h1Text.textContent = "Jeff is awesomer";});
+ctaButton.addEventListener('click', (event)=>{h1Text.textContent = "But Jeff is awesomer";});
 
 const ctaImg = document.getElementById('cta-img');
 ctaImg.setAttribute('src', siteContent.cta["img-src"]);
