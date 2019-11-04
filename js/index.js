@@ -40,3 +40,67 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+const navLinks = document.querySelector('nav').children;
+Array.from(navLinks).forEach((navLink, i) => {
+  navLink.textContent = siteContent.nav[`nav-item-${i + 1}`];
+  navLink.style.color = 'green';
+});
+
+//Using the append child method
+const newLink1 = document.createElement('a');
+newLink1.innerHTML = "Learn";
+newLink1.style.color='green';
+newLink1.setAttribute("href", "#");
+
+//Using the prepend method
+const newLink2 = document.createElement("a");
+newLink2.innerHTML =  "Home";
+newLink2.setAttribute("href", "#");
+newLink2.style.color = 'green';
+
+const newNav=document.querySelector('nav');
+newNav.prepend(newLink2);
+newNav.appendChild(newLink1);
+
+
+
+
+const h1Text = document.querySelector('h1');
+h1Text.innerHTML = siteContent['cta']['h1'].replace(/\s/g, "<br />"
+);
+// h1Text.style.border="1px solid red";
+
+h1Text.parentElement.style.marginRight = "200px";
+const ctaButton = document.querySelector('button');
+ctaButton.append(siteContent.cta['button']);
+ctaButton.addEventListener('click', (event)=>{h1Text.textContent = "But Jeff is awesomer";});
+
+const ctaImg = document.getElementById('cta-img');
+ctaImg.setAttribute('src', siteContent.cta["img-src"]);
+
+const siteTextContentHeaders = document.querySelectorAll('h4');
+siteTextContentHeaders[0].textContent = siteContent["main-content"]["features-h4"];
+siteTextContentHeaders[1].textContent = siteContent["main-content"]["about-h4"];
+siteTextContentHeaders[2].textContent = siteContent["main-content"]["services-h4"];
+siteTextContentHeaders[3].textContent = siteContent["main-content"]["product-h4"];
+siteTextContentHeaders[4].textContent = siteContent["main-content"]["vision-h4"];
+siteTextContentHeaders[5].textContent = siteContent.contact["contact-h4"];
+
+const siteTextContent = document.querySelectorAll('p');
+siteTextContent[0].textContent = siteContent["main-content"]["features-content"];
+siteTextContent[1].textContent = siteContent["main-content"]["about-content"];
+siteTextContent[2].textContent = siteContent["main-content"]["services-content"];
+siteTextContent[3].textContent = siteContent["main-content"]["product-content"];
+siteTextContent[4].textContent = siteContent["main-content"]["vision-content"];
+siteTextContent[5].textContent = siteContent.contact.address;
+siteTextContent[6].textContent = siteContent.contact.phone;
+siteTextContent[7].textContent = siteContent.contact.email;
+
+const middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+const footerText = document.querySelector('footer').children;
+footerText[0].textContent = siteContent.footer.copyright;
+
+
