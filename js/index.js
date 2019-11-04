@@ -67,7 +67,11 @@ newNav.appendChild(newLink1);
 
 
 const h1Text = document.querySelector('h1');
-h1Text.append(siteContent.cta["h1"]);
+h1Text.innerHTML = siteContent['cta']['h1'].replace(/\s/g, "<br />"
+);
+// h1Text.style.border="1px solid red";
+
+h1Text.parentElement.style.marginRight = "200px";
 const ctaButton = document.querySelector('button');
 ctaButton.append(siteContent.cta['button']);
 ctaButton.addEventListener('click', (event)=>{h1Text.textContent = "But Jeff is awesomer";});
